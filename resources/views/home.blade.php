@@ -29,7 +29,12 @@
                             <tr>
                                 <th scope="row">{{$provider->id}}</th>
                                 <td>{{$provider->name}}</td>
-                                <td>{{$provider->url}}</td>
+                                <td>
+                                  <a href="{{$provider->url}}" target="_blank">
+                                    <img src="{{$provider->url}}" alt="Icon" width="30" height="30" class="rounded-circle">
+                                  </a>
+                                </td>
+                                
                                 <td>
                                     <form action="{{ route('providers.destroy',$provider->id) }}" method="Post">
                                         <a class="btn btn-primary" href="{{ route('providers.edit',$provider->id) }}">Edit</a>
