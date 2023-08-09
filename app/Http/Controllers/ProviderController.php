@@ -21,7 +21,7 @@ class ProviderController extends Controller
      */
     public function create()
     {
-        return view('pages.users.create');
+        return view('pages.providers.create');
     }
 
     /**
@@ -39,9 +39,9 @@ class ProviderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Provider $provider)
     {
-        //
+        return view('pages.providers.show', compact('provider'));
     }
 
     /**
@@ -49,7 +49,7 @@ class ProviderController extends Controller
      */
     public function edit(Provider $provider)
     {
-        return view('pages.users.edit', compact('provider'));
+        return view('pages.providers.edit', compact('provider'));
     }
 
     /**
@@ -67,6 +67,6 @@ class ProviderController extends Controller
     public function destroy(Provider $provider)
     {
         $provider->delete();
-        return redirect()->route('home')->with('success','User has been updated successfully.');
+        return redirect()->route('home')->with('success','Provider has been updated successfully.');
     }
 }

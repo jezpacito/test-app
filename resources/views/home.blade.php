@@ -12,13 +12,6 @@
                     <div class="alert alert-success">
                         <p>{{ $message }}</p>
                     </div>
-                    @else
-                    @php
-                        $message = Session::get('error')
-                    @endphp
-                    <div class="alert alert-success">
-                        <p>{{ $message }}</p>
-                    </div>
                     @endif
 
                     <a class="btn btn-primary" href="{{ route('providers.create') }}">Add</a>
@@ -40,6 +33,7 @@
                                 <td>
                                     <form action="{{ route('providers.destroy',$provider->id) }}" method="Post">
                                         <a class="btn btn-primary" href="{{ route('providers.edit',$provider->id) }}">Edit</a>
+                                        <a class="btn btn-secondary" href="{{ route('providers.show',$provider->id) }}">SHow</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
