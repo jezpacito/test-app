@@ -12,27 +12,34 @@
                     <div class="alert alert-success">
                         <p>{{ $message }}</p>
                     </div>
+                    @else
+                    @php
+                        $message = Session::get('error')
+                    @endphp
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
                     @endif
 
-                    <a class="btn btn-primary" href="{{ route('users.create') }}">Add</a>
+                    <a class="btn btn-primary" href="{{ route('providers.create') }}">Add</a>
                     <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">URL</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($users as $user)
+                          @foreach($providers as $provider)
                             <tr>
-                                <th scope="row">{{$user->id}}</th>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
+                                <th scope="row">{{$provider->id}}</th>
+                                <td>{{$provider->name}}</td>
+                                <td>{{$provider->url}}</td>
                                 <td>
-                                    <form action="{{ route('users.destroy',$user->id) }}" method="Post">
-                                        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+                                    <form action="{{ route('providers.destroy',$provider->id) }}" method="Post">
+                                        <a class="btn btn-primary" href="{{ route('providers.edit',$provider->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -43,7 +50,7 @@
                         </tbody>
                       </table>
                       <div class="d-flex justify-content-center">
-                        {!! $users->links() !!}
+                        {!! $providers->links() !!}
                     </div>
                 </div>
             </div>

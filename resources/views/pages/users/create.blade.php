@@ -12,14 +12,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        Add User Details
-                        <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
+                        Add Provder Details
+                        <form action="{{ route('providers.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Name:</strong>
-                                        <input type="text" name="name" class="form-control" placeholder="User Name">
+                                        <input type="text" name="name" class="form-control" placeholder="Provider Name" required>
                                         @error('name')
                                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                         @enderror
@@ -27,9 +27,9 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 mb-2">
                                     <div class="form-group">
-                                        <strong> Email:</strong>
-                                        <input type="email" name="email" class="form-control" placeholder="User Email">
-                                        @error('email')
+                                        <strong> URL:</strong>
+                                        <input type="text" name="url" class="form-control" placeholder="Provider Url" required>
+                                        @error('url')
                                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                         @enderror
                                     </div>

@@ -12,16 +12,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        Update User Details
-                    <form action="{{ route('users.update',$user->id) }}" method="POST" enctype="multipart/form-data">
+                        Update Provider Details
+                    <form action="{{ route('providers.update',$provider->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>User Name:</strong>
-                                    <input type="text" name="name" value="{{ $user->name }}" class="form-control"
-                                        placeholder="User name">
+                                    <strong>Provider Name:</strong>
+                                    <input type="text" name="name" value="{{ $provider->name }}" class="form-control"
+                                        placeholder="provider name">
                                     @error('name')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
@@ -29,10 +29,10 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>User Email:</strong>
-                                    <input type="email" name="email" class="form-control" placeholder="User Email"
-                                        value="{{ $user->email }}">
-                                    @error('email')
+                                    <strong>Provider URL:</strong>
+                                    <input type="text" name="url" class="form-control" placeholder="provider Email"
+                                        value="{{ $provider->url }}">
+                                    @error('url')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
                                 </div>

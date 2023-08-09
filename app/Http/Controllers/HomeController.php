@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Provider;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::where('email', '!=','superadmin@one.test')
-            ->simplePaginate(10);
+        $providers = Provider::simplePaginate(10);
 
-        return view('home', compact('users'));
+        return view('home', compact('providers'));
     }
 }

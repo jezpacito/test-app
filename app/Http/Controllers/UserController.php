@@ -71,7 +71,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-
-        return redirect()->route('home')->with('errors','User has been updated successfully.');
+        
+        return redirect()->route('home')->with('success','User has been updated successfully.');
     }
 }
