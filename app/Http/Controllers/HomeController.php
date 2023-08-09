@@ -25,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $providers = Provider::simplePaginate(10);
+        $providers = Provider::where('user_id', auth()->user()->id)
+            ->simplePaginate(10);
 
         return view('home', compact('providers'));
     }

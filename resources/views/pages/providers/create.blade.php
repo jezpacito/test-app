@@ -59,6 +59,7 @@
                     }
                 },
                 error: function() {
+                    alert('Error fetching dog image URL.')
                     console.log('Error fetching dog image URL.');
                 }
             });
