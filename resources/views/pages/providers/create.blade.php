@@ -34,7 +34,6 @@
                                     @enderror
                                 </div>
                                     <button type="button" class="btn btn-sm btn-secondary" id="populateUrl">Populate URL</button>
-
                             </div>
                             <button type="submit" class="btn btn-primary ml-3">Submit</button>
                         </div>

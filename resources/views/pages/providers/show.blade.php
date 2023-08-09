@@ -10,13 +10,9 @@
                     <a href="{{route('home')}}"> HOME </a>
                     <div class="jumbotron">
                     <img src="{{$provider->url}}" class="img-fluid" alt="Dog Image">
-
                         <h1 class="display-4">Hello, {{auth()->user()->name}}</h1>
                         <p class="lead">{{$provider->name}}</p>
-                       
                       </div>
-                    
-                   
                 </div>
             </div>
             
